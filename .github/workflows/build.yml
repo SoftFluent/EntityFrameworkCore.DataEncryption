@@ -24,6 +24,7 @@ jobs:
           7.0.x
           8.0.x
           9.0.x
+          10.0.x
 
     - name: Display .NET version
       run: dotnet --version
@@ -32,7 +33,7 @@ jobs:
       run: dotnet restore
 
     - name: Build
-      run: dotnet build SoftFluent.EntityFrameworkCore.DataEncryption.sln --configuration Release -f net9.0 --no-restore
+      run: dotnet build SoftFluent.EntityFrameworkCore.DataEncryption.sln --configuration Release -f net10.0 --no-restore
 
     - name: Run unit tests
       run: dotnet test --configuration Release --collect:"XPlat Code Coverage" --settings ./test/EntityFrameworkCore.DataEncryption.Test/runsettings.xml
