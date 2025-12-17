@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;net6.0;net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
 		<LangVersion>10.0</LangVersion>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<AssemblyName>SoftFluent.EntityFrameworkCore.DataEncryption</AssemblyName>
 		<RootNamespace>SoftFluent.EntityFrameworkCore.DataEncryption</RootNamespace>
 		<IsPackable>true</IsPackable>
-		<Version>7.0.0</Version>
+		<Version>8.0.0</Version>
 		<Authors>SoftFluent</Authors>
     <Company>SoftFluent</Company>
 		<PackageId>EntityFrameworkCore.DataEncryption</PackageId>
@@ -18,10 +18,10 @@
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageTags>entity-framework-core, extensions, dotnet-core, dotnet, encryption, fluent-api</PackageTags>
 		<PackageIcon>icon.png</PackageIcon>
-		<Copyright>SoftFluent © 2019 - 2024</Copyright>
+		<Copyright>SoftFluent © 2019 - 2025</Copyright>
 		<Description>A plugin for Microsoft.EntityFrameworkCore to add support of encrypted fields using built-in or custom encryption providers.</Description>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<PackageReleaseNotes>https://github.com/SoftFluent/EntityFrameworkCore.DataEncryption/releases/tag/v6.0.0</PackageReleaseNotes>
+		<PackageReleaseNotes>https://github.com/SoftFluent/EntityFrameworkCore.DataEncryption/releases/tag/v8.0.0</PackageReleaseNotes>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
@@ -45,9 +45,12 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="[8.0.11,)" />
 	</ItemGroup>
   <ItemGroup Condition="('$(TargetFramework)' == 'net9.0')">
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="[9,)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.*" />
   </ItemGroup>
-
+  <ItemGroup Condition="('$(TargetFramework)' == 'net10.0')">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.*" />
+  </ItemGroup>
+  
   <ItemGroup>
 		<None Include="..\..\LICENSE">
 			<Pack>True</Pack>
